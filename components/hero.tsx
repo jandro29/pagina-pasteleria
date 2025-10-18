@@ -14,12 +14,16 @@ export default function Hero() {
               mejor tradición repostera.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              <a href="#about">
+              <button  className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
                 Conocer Más
               </button>
+              </a>
+              <a href="#location">
               <button className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary/10 transition-colors">
                 Ubicación
               </button>
+              </a>
             </div>
           </div>
 
