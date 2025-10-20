@@ -1,22 +1,9 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 export default function GoogleAnalytics() {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const gaId = "G-EN6FNMQQKY";
-
-  useEffect(() => {
-    if (gaId && typeof window !== 'undefined' && window.gtag) {
-      const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '');
-      window.gtag('config', gaId, {
-        page_path: url,
-      });
-    }
-  }, [pathname, searchParams, gaId]);
+  const gaId = "G-EN6FNMQQKY"; // Tu ID directo aquí
 
   return (
     <>
@@ -32,9 +19,7 @@ export default function GoogleAnalytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gaId}', {
-              page_path: window.location.pathname,
-            });
+            gtag('config', '${gaId}');
           `,
         }}
       />
